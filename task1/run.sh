@@ -13,7 +13,8 @@ done
 mkdir $backup
 for file in $(find "$input" -type f -name "*.$ext")
 do
-    cp "$file" "$backup"
+newname=$(echo "$file" | sed 's|/|-|g')
+cp "$file" "$backup/$newname"
 done
 tar -czf "$archive" "$backup/"
 echo done
