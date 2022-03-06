@@ -1,4 +1,4 @@
 import sys
-file = open("index.h","w")
-file.write("const int index = 1;")
+file = open(sys.argv[1]+"/index.h","w")
+file.write("const int A = 1;")
 file.close()
