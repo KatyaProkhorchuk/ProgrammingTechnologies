@@ -1,4 +1,6 @@
 #include "main.h"
+#include <iostream>
 int main(){
-    return foo();
+    std::cout<<foo()<<std::endl;
+    return 0;
 }
