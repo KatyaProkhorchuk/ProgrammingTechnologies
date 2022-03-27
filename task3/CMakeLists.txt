@@ -4,7 +4,7 @@ option(ARM_BUILD "")
 option(TOOLCHAIN "" DAFAULT)
 option(CMAKE_INSTALL_PREFIX "" DAFAULT)
 
-set(TOOLCHAIN /usr/local/arm/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin)
+#set(TOOLCHAIN /usr/local/arm/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin)
 if(ARM_BUILD)
     set(CMAKE_SYSTEM_PROCESSOR aarch64)
     set(CMAKE_C_COMPILER ${TOOLCHAIN}/aarch64-linux-gnu-gcc)
