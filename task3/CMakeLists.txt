@@ -25,7 +25,10 @@ add_subdirectory(src)
 add_executable(Main main.cpp)
 add_executable(MainLib main_lib.cpp)
 
+set_target_properties(buffer PROPERTIES PUBLIC_HEADER "buffer.h")
+
 target_link_libraries(MainLib buffer)
+
 install(DIRECTORY ./include DESTINATION ${CMAKE_INSTALL_PREFIX})
 # if(ARM_BUILD)
 install(TARGETS Main MainLib DESTINATION ${CMAKE_INSTALL_PREFIX}/bin PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_PREFIX}/include)
