@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(SimpleLibrary)
 
 include_directories(include)
-set(tools /usr/local/arm/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu)
+# set(tools /usr/local/arm/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu)
 if(ARM_BUILD)
     set(CMAKE_SYSTEM_PROCESSOR aarch64)
     set(CMAKE_C_COMPILER ${tools}/bin/aarch64-linux-gnu-gcc)
