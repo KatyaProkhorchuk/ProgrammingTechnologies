@@ -4,10 +4,6 @@ option(ARM_BUILD "")
 option(TOOLCHAIN "" DAFAULT)
 option(CMAKE_INSTALL_PREFIX "" DAFAULT)
 
-project(SimpleLibrary)
-
-include_directories(include)
-
 # set(TOOLCHAIN /usr/local/arm/gcc-linaro-7.5.0-2019.12-x86_64_aarch64-linux-gnu/bin)
 if(ARM_BUILD)
     set(CMAKE_SYSTEM_PROCESSOR aarch64)
@@ -17,6 +13,10 @@ if(ARM_BUILD)
     set(CMAKE_INSTALL_RPATH ${CMAKE_INSTALL_PREFIX}/lib)
     set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 endif(ARM_BUILD)
+
+project(SimpleLibrary)
+
+include_directories(include)
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/bin)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${SimpleLibrary_SOURCE_DIR}/lib)
