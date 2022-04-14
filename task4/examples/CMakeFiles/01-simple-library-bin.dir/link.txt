@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/01-simple-library-bin.dir/01-main.cpp.o  -o 01-simple-library-bin  -l01-simple-library 

@@ -1,0 +1,6 @@
+/home/katerina/mipt/2_semestr/TP/TP1/task4/examples/CMakeFiles/rebuild_cache.dir
+/home/katerina/mipt/2_semestr/TP/TP1/task4/examples/CMakeFiles/edit_cache.dir
+/home/katerina/mipt/2_semestr/TP/TP1/task4/examples/CMakeFiles/03-weather-bin.dir
+/home/katerina/mipt/2_semestr/TP/TP1/task4/examples/CMakeFiles/02-tree-bin.dir
+/home/katerina/mipt/2_semestr/TP/TP1/task4/examples/CMakeFiles/01-simple-library-bin.dir
+/home/katerina/mipt/2_semestr/TP/TP1/task4/examples/CMakeFiles/00-aplusb-bin.dir

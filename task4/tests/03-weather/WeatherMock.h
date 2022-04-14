@@ -7,11 +7,22 @@
 #include <gmock/gmock.h>
 #include <Weather.h>
 #include <cpr/cpr.h>
-using ::testing::Return;
+#include <string.h>
+#include <iostream>
 
 class WeatherMock : public Weather
 {
 public:
-    // MOCK_METHOD(cpr::Response, Gets, (const std::string &city)); //фиктивный метод
-    MOCK_METHOD(cpr::Response, Get, (const std::string &city, const cpr::Url &url)); //фиктивный метод
+    cpr::Response Get(const std::string &city, const cpr::Url &url)
+    {
+        cpr::Response response;
+        std::stringstream s;
+        int f1, f2;
+        s >> f1 >> f2;
+        response.text = "{\"main\":{\"temp\":" + std::to_string(f1) + "},\"list\":[\"\",\"\",\"\",\"\",\"\",\"\",\"\",{\"main\":{\"temp\":" + std::to_string(f2) + "}}]}";
+        response.status_code = 200;
+        return response;
+    }
+    
+    // MOCK_METHOD(cpr::Response, Get, (const std::string& city, const cpr::Url& url));
 };
