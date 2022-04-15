@@ -14,13 +14,14 @@ TEST(WeatherTestCase, Tests)
     testing::NiceMock<WeatherMock> weatherMock;
     float temp_msc, temp_paris;
     ASSERT_THROW(weather.GetTemperature(")))"), std::invalid_argument);
-    // weather.SetApiKey("weather");
+    
 
-    // std::string key = "22895a60d7c10a6d37075ebd21220122";
-    // cpr::Response moscow = cpr::Get(kBaseUrl, cpr::Parameters{
-    //                                               {"q", "Moscow"},
-    //                                               {"appid", key},
-    //                                               {"units", "metric"}});
+    std::string key = "22895a60d7c10a6d37075ebd21220122";
+    weather.SetApiKey(key);
+    cpr::Response moscow = cpr::Get(kBaseUrl, cpr::Parameters{
+                                                  {"q", "Moscow"},
+                                                  {"appid", key},
+                                                  {"units", "metric"}});
     // cpr::Response paris = cpr::Get(kBaseUrl, cpr::Parameters{
     //                                              {"q", "Paris"},
     //                                              {"appid", key},
