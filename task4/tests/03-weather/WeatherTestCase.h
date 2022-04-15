@@ -8,7 +8,5 @@
 #include "WeatherMock.h"
 class WeatherTestCase : public ::testing::Test
 {
-public:
-    WeatherMock weatherMock;
     
 };
