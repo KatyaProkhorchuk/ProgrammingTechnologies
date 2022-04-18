@@ -19,7 +19,7 @@ TEST(FileNodeTest, FileNodeErr)
     auto temp_path = fs::temp_directory_path();
     std::filesystem::create_directory(temp_path / "dir");
     std::ofstream(temp_path / "dir/file.txt");
-    std::string dir="dir/file.txt";
+    std::string dir=temp_path /"dir/file.txt";
     ASSERT_THROW(GetTree(dir,true),std::invalid_argument);
 }
 TEST(FileNodeTest, FileNodePushBack)
