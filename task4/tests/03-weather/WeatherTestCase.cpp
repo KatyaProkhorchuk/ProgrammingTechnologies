@@ -15,8 +15,8 @@ TEST(WeatherTestCase, Tests)
     float temp_msc, temp_paris;
     ASSERT_THROW(weather.GetTemperature(")))"), std::invalid_argument);
     
-
-    std::string key = "22895a60d7c10a6d37075ebd21220122";
+    std::string key = std::getenv("MY_API_WEATHER_KEY");
+    // std::string key = "22895a60d7c10a6d37075ebd21220122";
     weather.SetApiKey(key);
     cpr::Response moscow = cpr::Get(kBaseUrl, cpr::Parameters{
                                                   {"q", "Moscow"},
