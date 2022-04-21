@@ -12,7 +12,7 @@ RUN cmake . && make && ./bin/C
 FROM ubuntu:20.04
 RUN useradd -ms /bin/bash tp2022user
 USER tp2022user
-FROM python:3.9 as builder
+# FROM python:3.9 as builder
 WORKDIR /opt/techprog
 RUN python3 -m pip install flask
 
