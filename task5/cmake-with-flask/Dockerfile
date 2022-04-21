@@ -10,8 +10,8 @@ COPY . /opt/techprog
 WORKDIR /opt/techprog
 RUN cmake . && make && ./bin/C
 FROM ubuntu:20.04
-RUN useradd -ms /bin/bash tp2022user
-USER tp2022user
+RUN useradd -ms /bin/bash techproguser
+USER techproguser
 FROM python:3 as builder
 WORKDIR /opt/techprog
 RUN python3 -m pip install flask
