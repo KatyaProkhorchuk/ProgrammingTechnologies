@@ -1,4 +1,3 @@
-
 FROM gcc:latest as build
 WORKDIR opt/techprog
 RUN apt-get update &&\
@@ -9,8 +8,7 @@ RUN pip3 install --upgrade pip
 COPY . /opt/techprog
 WORKDIR /opt/techprog
 RUN cmake . && make && ./bin/C
-# FROM ubuntu:20.04
-# RUN useradd -ms /bin/bash tp2022user
+
 
 FROM python:3 as builder
 WORKDIR /opt/techprog
