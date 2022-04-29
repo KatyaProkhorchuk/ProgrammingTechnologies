@@ -1,0 +1,12 @@
+name: Task6
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [ master ]
+jobs:
+  Task6:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Build
+        run: git checkout task6 | cmake . | make C
