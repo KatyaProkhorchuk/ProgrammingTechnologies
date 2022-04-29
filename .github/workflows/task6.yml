@@ -14,9 +14,9 @@ jobs:
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
+          working-directory: './task6/bin/'
           exec-path:  './CTestExe'
           report-path: './report.xml'
-          working-directory: './task6/bin/'
       - name: Googletest 
         uses: actions/checkout@v3
         with:
@@ -25,3 +25,13 @@ jobs:
       - name: Build
         working-directory: './task6/'
         run: mkdir build; cd build; cmake ..; cmake --build .
+      - name: TestReport
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'test-report'
+          path: './task6/bin/report.xml'
+      - name: UploadArtifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: 'Distributive'
+          path: task/bin; task/lib
