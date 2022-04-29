@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v3
         with:
           repository: 'google/googletest'
-          path: './task6/3rdparty'
+          path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
         working-directory: './task6/'
         run: mkdir build; cd build; cmake ..; cmake --build .
