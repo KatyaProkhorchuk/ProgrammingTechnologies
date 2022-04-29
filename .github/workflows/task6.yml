@@ -11,13 +11,19 @@ jobs:
         uses: actions/checkout@v3
         with:
           ref: task6
-      - name: Googletest 
-        uses: actions/checkout@v3
+      - name: Test
+        uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
-          repository: 'google/googletest'
-          working-directory: '${{github.workspase}}/task6'
-          path: '${{github.workspace}}/task6/3rdparty'
-      - name: Build
-        working-directory: '${{github.workspase}}/task6'
-        run: mkdir build | cd build | cmake .. | cmake --build .
+          exec-path:  './CTestExe'
+          report-path: './report.xml'
+          working-directory: './task6/bin/'
+#       - name: Googletest 
+#         uses: actions/checkout@v3
+#         with:
+#           repository: 'google/googletest'
+#           working-directory: '${{github.workspase}}/task6'
+#           path: '${{github.workspace}}/task6/3rdparty'
+#       - name: Build
+#         working-directory: '${{github.workspase}}/task6'
+#         run: mkdir build | cd build | cmake .. | cmake --build .
         
