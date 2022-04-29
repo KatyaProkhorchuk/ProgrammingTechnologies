@@ -18,7 +18,7 @@ jobs:
           path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
         working-directory: '${{github.workspace}}/task6/'
-        run: mkdir build; cd build; cmake ..; cmake --build .
+        run: mkdir build; cd build; cmake ..; cmake --build .; make
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
