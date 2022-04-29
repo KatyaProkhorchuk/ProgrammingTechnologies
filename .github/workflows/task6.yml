@@ -24,4 +24,4 @@ jobs:
           path: './task6/3rdparty'
       - name: Build
         working-directory: './task6/'
-        run: mkdir build; cd build
+        run: mkdir build; cd build; cmake ..; cmake --build .
