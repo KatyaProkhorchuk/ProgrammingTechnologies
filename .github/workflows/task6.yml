@@ -12,6 +12,7 @@ jobs:
         with:
           ref: task6
       - name: Clone gogletest 
+        uses: actions/checkout@v1
         with:
           repository: 'google/googletest'
           path: '${{github.workspase}}/task6/3rdparty'
