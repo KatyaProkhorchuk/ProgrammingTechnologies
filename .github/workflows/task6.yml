@@ -12,7 +12,9 @@ jobs:
         with:
           ref: task6
       - name: Clone gogletest 
-        run: sudo apt-get install libgtest-dev && cd /usr/src/gtest && sudo cmake CMakeLists.txt && sudo make && sudo cp *.a /usr/lib && sudo ln -s /usr/lib/libgtest.a /usr/local/lib/libgtest.a && sudo ln -s /usr/lib/libgtest_main.a /usr/local/lib/libgtest_main.a
+        with:
+          repository: 'google/googletest'
+          path: '${{github.workspase}}/task6/3rdparty'
       - name: Build
         working-directory: '${{github.workspase}}/task6'
         run: mkdir build | cd build | cmake .. | cmake --build .
