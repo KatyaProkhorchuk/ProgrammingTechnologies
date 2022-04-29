@@ -17,5 +17,5 @@ jobs:
           repository: 'google/googletest'
       - name: Build
         working-directory: '${{github.workspase}}/task6'
-        run: mkdir build | cd build | cmake .. | cmake --build
+        run: mkdir build | cd build | cmake .. | cmake --build .
         
