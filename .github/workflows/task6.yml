@@ -8,5 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - name: Clone gogletest 
+        with: 
+          repository: 'google/googletest'
+      - uses: actions/checkout@v3
       - name: Build
-        run: git checkout task6 | cmake . | make C | cd ..
+        working-directory: '${{github.workspase}}/task6'
+        run: git checkout task6 | cd task6 | mkdir build | cd build | cmake .. | cmake --build
+        
