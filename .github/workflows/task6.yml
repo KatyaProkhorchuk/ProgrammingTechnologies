@@ -9,6 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Clone gogletest 
+      - uses: actions/checkout@v3
         with: 
           repository: 'google/googletest'
       - name: Build
