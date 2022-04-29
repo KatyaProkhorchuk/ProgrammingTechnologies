@@ -17,19 +17,19 @@ jobs:
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
-        working-directory: './task6/'
+        working-directory: '${{github.workspace}}/task6/'
         run: mkdir build; cd build; cmake ..; cmake --build .
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
-          working-directory: './task6/bin/'
-          exec-path:  './CTestExe'
-          report-path: './report.xml'
+          working-directory: '${{github.workspace}}/task6/bin/'
+          exec-path:  '${{github.workspace}}/CTestExe'
+          report-path: '${{github.workspace}}/report.xml'
       - name: TestReport
         uses: actions/upload-artifact@v3
         with:
           name: 'test-report'
-          path: './task6/bin/report.xml'
+          path: '${{github.workspace}}/task6/bin/report.xml'
       - name: UploadArtifacts
         uses: actions/upload-artifact@v3
         with:
