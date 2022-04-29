@@ -26,12 +26,12 @@ jobs:
         working-directory: './task6/'
         run: mkdir build; cd build; cmake ..; cmake --build .
       - name: TestReport
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: 'test-report'
           path: './task6/bin/report.xml'
       - name: UploadArtifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: 'Distributive'
           path: task/bin; task/lib
