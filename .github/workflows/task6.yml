@@ -22,7 +22,7 @@ jobs:
         with:
           repository: 'google/googletest'
           path: './task6/3rdparty'
-#       - name: Build
-#         working-directory: '${{github.workspase}}/task6'
-#         run: mkdir build | cd build | cmake .. | cmake --build .
+      - name: Build
+        working-directory: './task6'
+        run: mkdir build | cd build | cmake .. | cmake --build .
         
