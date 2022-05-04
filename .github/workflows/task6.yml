@@ -7,18 +7,28 @@ jobs:
   Task6:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone
-        uses: actions/checkout@v3
-        with:
-          ref: task6
+      # - name: Clone
+      #   uses: actions/checkout@v3
+      #   with:
+      #     ref: task6
       - name: Googletest 
         uses: actions/checkout@v3
         with:
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
-        working-directory: '${{github.workspace}}/task6/'
-        run: git checkout task6; mkdir build; cd build; cmake ..; cmake --build .; make
+#         with:
+#           repository: 'google/googletest'
+#           path: '${{github.workspace}}/task6/3rdparty'
+        run: 
+          git clone https://github.com/KatyaProkhorchuk/TP1.git
+          cd TP1
+          git checkout task6
+          mkdir build 
+          cd build 
+          cmake ..
+          cmake --build .
+          make
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
