@@ -20,9 +20,8 @@ jobs:
 #         with:
 #           repository: 'google/googletest'
 #           path: '${{github.workspace}}/task6/3rdparty'
+        working-directory: '${{github.workspace}}'
         run: 
-          git clone https://github.com/KatyaProkhorchuk/TP1.git
-          cd TP1
           git checkout task6
           mkdir build 
           cd build 
