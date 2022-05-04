@@ -22,7 +22,7 @@ jobs:
 #           path: '${{github.workspace}}/task6/3rdparty'
 #         working-directory: '${{github.workspace}}/'
         run: 
-          cd '${{github.workspace}}'
+#           cd '${{github.workspace}}'
           git checkout task6
           cd task6
           mkdir build 
