@@ -7,12 +7,12 @@ jobs:
   Task6:
     runs-on: ubuntu-latest
     steps:
-      # - name: Clone
-      #   uses: actions/checkout@v3
+      - name: Clone
+        uses: actions/checkout@v3
       #   with:
       #     ref: task6
       - name: Googletest 
-        uses: actions/checkout@v3
+#         uses: actions/checkout@v3
         with:
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
