@@ -23,6 +23,7 @@ jobs:
           mkdir build;
           cd build; 
           cmake ..; 
+          cmake --build;
           make; 
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
