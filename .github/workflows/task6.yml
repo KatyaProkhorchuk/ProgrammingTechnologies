@@ -34,18 +34,18 @@ jobs:
           exec-path:  '${{github.workspace}}/CTestExe'
           report-path: '${{github.workspace}}/report.xml'
       - name: TestReport
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: 'test-report'
-          path: '${{github.workspace}}/bin/report.xml'
+          path: '${{github.workspace}}/task6/bin/report.xml'
         
       - name: UploadArtifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: 'Distributive'
           path: |
-            './task6/bin'
-            './task6/lib'
+            '${{github.workspace}}/task6/bin'
+            '${{github.workspace}}/task6/lib'
         
       - name: debug
         working-directory: '${{github.workspace}}/task6'
