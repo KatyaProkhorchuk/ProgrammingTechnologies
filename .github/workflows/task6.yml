@@ -9,18 +9,16 @@ jobs:
   Task6:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
+ 
+      - uses: actions/checkout@master
         with:
-          ref: task6
-      - name: Googletest 
-        uses: actions/checkout@master
-        with:
-#           working-directory: '${{github.workspace}}/task6/'
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
+      - name: Tree
+        run: sudo apt install tree
       - name: Build
-        working-directory: '${{github.workspace}}/task6/'
+#         working-directory: '${{github.workspace}}/task6/'
         run: 
           sudo apt-get install cmake;
           mkdir build;
