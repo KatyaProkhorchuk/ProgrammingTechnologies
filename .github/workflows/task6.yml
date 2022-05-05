@@ -23,7 +23,7 @@ jobs:
           sudo apt-get install cmake;
           mkdir task6/build;
           cd task6/build; 
-          cmake ../;
+          cmake ..;
           sudo make;
           sudo make install;
       - name: Test
