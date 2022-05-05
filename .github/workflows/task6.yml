@@ -10,13 +10,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
- 
+      - name: Tree
+        run: sudo apt install tree
       - uses: actions/checkout@master
         with:
           repository: 'google/googletest'
-          path: '${{github.workspace}}/task6/3rdparty'
-      - name: Tree
-        run: sudo apt install tree
+          path: '${{github.workspace}}/task6/3rdparty/'
+     
       - name: Build
 #         working-directory: '${{github.workspace}}/task6/'
         run: 
