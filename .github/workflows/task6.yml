@@ -34,13 +34,13 @@ jobs:
           exec-path:  '${{github.workspace}}/CTestExe'
           report-path: '${{github.workspace}}/report.xml'
       - name: TestReport
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: 'test-report'
           path: '${{github.workspace}}/bin/report.xml'
         
       - name: UploadArtifacts
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v2
         with:
           name: 'Distributive'
           path: |
