@@ -9,15 +9,16 @@ jobs:
   Task6:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      
+      - name: Clone
+        uses: actions/checkout@v3
+        with:
+          ref: task6
       - name: Googletest 
         uses: actions/checkout@v3
         with:
 #           working-directory: '${{github.workspace}}/task6/'
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
-          
       - name: Build
         working-directory: '${{github.workspace}}/task6/'
         run: 
@@ -26,7 +27,7 @@ jobs:
           cd build; 
           cmake ..;
           sudo make;
-          sudo make install
+          sudo make install;
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
@@ -46,8 +47,7 @@ jobs:
           path: |
             task6/bin
             task6/lib
-          if-no-files-found: error
         
-#       - name: debug
-#         working-directory: '${{github.workspace}}/task6'
-#         run: tree
+      - name: debug
+        working-directory: '${{github.workspace}}/task6'
+        run: tree
