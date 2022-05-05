@@ -9,18 +9,25 @@ jobs:
   Task6:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - name: Tree
-        run: sudo apt install tree
-      
-      - uses: actions/checkout@master
+      - name: Clone
+        uses: actions/checkout@v3
         with:
-          repository: google/googletest
-          path: task6/3rdparty/
-       
+          ref: task6
+      - name: Googletest 
+        uses: actions/checkout@master
+        with:
+#           working-directory: '${{github.workspace}}/task6/'
+          repository: 'google/googletest'
+          path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
-        run: sudo apt-get install cmake; mkdir task6/build; cd task6/build; cmake ../; sudo make; sudo make install
-      
+        working-directory: '${{github.workspace}}/task6/'
+        run: 
+          sudo apt-get install cmake;
+          mkdir build;
+          cd build; 
+          cmake ..;
+          sudo make;
+          sudo make install;
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
