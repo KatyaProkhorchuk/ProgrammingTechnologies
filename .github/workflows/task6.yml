@@ -14,13 +14,10 @@ jobs:
       - name: Googletest 
         uses: actions/checkout@v3
         with:
+          working-directory: '${{github.workspace}}/task6/'
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
-#         with:
-#           repository: 'google/googletest'
-#           path: '${{github.workspace}}/task6/3rdparty'
-#         working-directory: '${{github.workspace}}/'
         working-directory: '${{github.workspace}}/task6/'
         run: 
           mkdir build;
@@ -47,6 +44,6 @@ jobs:
             task6/bin
             task6/lib
         
-      - name: debug
-        working-directory: '${{github.workspace}}/task6'
-        run: tree
+#       - name: debug
+#         working-directory: '${{github.workspace}}/task6'
+#         run: tree
