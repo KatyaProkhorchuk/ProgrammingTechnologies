@@ -22,14 +22,12 @@ jobs:
 #           path: '${{github.workspace}}/task6/3rdparty'
 #         working-directory: '${{github.workspace}}/'
         working-directory: '${{github.workspace}}/task6/'
-        run: 
-#           cd '${{github.workspace}}'
-          git checkout task6
-          cd task6
-          mkdir build 
-          cd build 
-          cmake ..
-          make
+        run: git checkout task6 | ls
+#           cd task6
+#           mkdir build 
+#           cd build 
+#           cmake ..
+#           make
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
