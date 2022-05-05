@@ -27,7 +27,7 @@ jobs:
           cd build; 
           cmake ../;
           sudo make;
-          sudo make install;
+          sudo make install
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
