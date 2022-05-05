@@ -21,9 +21,9 @@ jobs:
 #         working-directory: '${{github.workspace}}/task6/'
         run: 
           sudo apt-get install cmake;
-          mkdir build;
-          cd build; 
-          cmake ..;
+          mkdir task6/build;
+          cd task6/build; 
+          cmake ../;
           sudo make;
           sudo make install;
       - name: Test
