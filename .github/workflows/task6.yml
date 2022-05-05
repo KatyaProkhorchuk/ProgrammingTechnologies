@@ -37,12 +37,13 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: 'test-report'
-          path: '${{github.workspace}}/task6/bin/report.xml'
+          path: '${{github.workspace}}/bin/report.xml'
+        
       - name: UploadArtifacts
         uses: actions/upload-artifact@v3
         with:
           name: 'Distributive'
-          path: /bin; /lib
+          path: /task6/bin; /task6/lib
       - name: debug
         working-directory: '${{github.workspace}}/task6'
         run: tree
