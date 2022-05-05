@@ -1,6 +1,5 @@
 name: Task6
 on:
-  workflow_dispatch:
   pull_request:
     branches: [ task6 ]
   push:
@@ -9,16 +8,15 @@ jobs:
   Task6:
     runs-on: ubuntu-latest
     steps:
-      - name: Clone
-        uses: actions/checkout@v3
-        with:
-          ref: task6
+      - uses: actions/checkout@v3
+      
       - name: Googletest 
         uses: actions/checkout@v3
         with:
 #           working-directory: '${{github.workspace}}/task6/'
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
+          
       - name: Build
         working-directory: '${{github.workspace}}/task6/'
         run: 
@@ -47,7 +45,8 @@ jobs:
           path: |
             task6/bin
             task6/lib
+          if-no-files-found: error
         
-      - name: debug
-        working-directory: '${{github.workspace}}/task6'
-        run: tree
+#       - name: debug
+#         working-directory: '${{github.workspace}}/task6'
+#         run: tree
