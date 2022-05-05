@@ -26,7 +26,6 @@ jobs:
           cd build; 
           cmake ..;
           cmake --build .;
-          make;
           make install;
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
