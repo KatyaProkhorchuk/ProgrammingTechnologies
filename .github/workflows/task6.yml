@@ -20,7 +20,7 @@ jobs:
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
-#         working-directory: '${{github.workspace}}/task6/'
+        working-directory: '${{github.workspace}}/task6/'
         run: 
           sudo apt-get install cmake;
           mkdir build;
