@@ -43,7 +43,10 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: 'Distributive'
-          path: /task6/bin; /task6/lib
+          path: |
+            './task6/bin'
+            './task6/lib'
+        
       - name: debug
         working-directory: '${{github.workspace}}/task6'
         run: tree
