@@ -2,7 +2,9 @@ name: Task6
 on:
   workflow_dispatch:
   pull_request:
-    branches: [ master ]
+    branches: [ task6 ]
+  push:
+    branches: [ task6 ]
 jobs:
   Task6:
     runs-on: ubuntu-latest
