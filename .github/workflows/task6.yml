@@ -30,9 +30,9 @@ jobs:
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
-          working-directory: '${{github.workspace}}/task6/bin/'
-          exec-path:  '${{github.workspace}}/CTestExe'
-          report-path: '${{github.workspace}}/report.xml'
+          working-directory: './task6/bin/'
+          exec-path:  './CTestExe'
+          report-path: './report.xml'
       - name: TestReport
         uses: actions/upload-artifact@v3
         with:
