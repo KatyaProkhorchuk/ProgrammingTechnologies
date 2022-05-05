@@ -14,7 +14,7 @@ jobs:
       - name: Googletest 
         uses: actions/checkout@v3
         with:
-          working-directory: '${{github.workspace}}/task6/'
+#           working-directory: '${{github.workspace}}/task6/'
           repository: 'google/googletest'
           path: '${{github.workspace}}/task6/3rdparty'
       - name: Build
