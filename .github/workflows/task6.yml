@@ -22,11 +22,12 @@ jobs:
       - name: Build
         working-directory: '${{github.workspace}}/task6/'
         run: 
+          sudo apt-get install cmake;
           mkdir build;
           cd build; 
           cmake ..;
-          cmake --build .;
-          make install;
+          sudo make;
+          sudo make install;
       - name: Test
         uses: akhtyamovpavel/ActionGtestReport@v0.0.9
         with:
