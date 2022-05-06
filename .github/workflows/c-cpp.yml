@@ -18,7 +18,7 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: 'google/googletest'
-          path: '${{github.workspace}}/3rdparty'
+          path: '${{github.workspace}}/task6/3rdparty'
        
       - name: Build
         run: sudo apt-get install cmake; mkdir task6/build; cd task6/build; cmake ..; sudo make; sudo make install
