@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/00-aplusb-bin.dir/00-main.cpp.o  -o 00-aplusb-bin 
